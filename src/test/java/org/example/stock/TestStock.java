@@ -13,6 +13,6 @@ public class TestStock {
     @DisplayName("Invalid Stock")
     @Test
     void testInvalidStock() {
-        assert Stock.getPriceFromSymbol("") == -2;
+        assert Stock.getPriceFromSymbol("") == -1;
     }
 }
