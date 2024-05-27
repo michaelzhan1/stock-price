@@ -19,8 +19,21 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
+      - name: Create log folder
+        run: mkdir -p logs
+
       - name: Save environment variables
         run: mkdir -p src/main/resources && echo "API_KEY=${{ secrets.API_KEY }}" > src/main/resources/.env
 
       - name: Test
         run: mvn --batch-mode test
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: target/surefire-reports
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: logs
