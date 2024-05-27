@@ -16,6 +16,8 @@
 
     <build>
         <defaultGoal>compile</defaultGoal>
+        <scriptSourceDirectory>src/main</scriptSourceDirectory>
+        <testSourceDirectory>src/test</testSourceDirectory>
     </build>
 
     <dependencies>
