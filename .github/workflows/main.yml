@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Save environment variables
-        run: echo "API_KEY=${{ secrets.API_KEY }}" > src/main/resources/.env
+        run: mkdir -p src/main/resources && echo "API_KEY=${{ secrets.API_KEY }}" > src/main/resources/.env
 
       - name: Test
         run: mvn --batch-mode test
